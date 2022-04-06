@@ -82,6 +82,8 @@ resource "aws_launch_configuration" "app" {
   security_groups               = [ aws_security_group.allow-http.id ]
   associate_public_ip_address   = false
 
+  user_data                     = "${file("${path.module}/install_apache.sh")}"
+
   lifecycle {
     create_before_destroy = true
   }

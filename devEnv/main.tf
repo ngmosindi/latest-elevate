@@ -20,8 +20,8 @@ module "network" {
   
   main_subnet_db_1a_cidr    = "10.0.21.0/24"
   main_subnet_db_1b_cidr    = "10.0.22.0/24"
-
 }
+
 resource "aws_security_group" "mysql-sg" {
   name        = "${var.domain}-${var.env}-allow-mysql-sg"
   description = "Allow inbound traffic from application layer"
